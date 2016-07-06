@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491410A41D23FCC100190C50 /* HHProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 491410A31D23FCC100190C50 /* HHProject.m */; };
+		491410A91D23FE5600190C50 /* HHWorkspaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 491410A81D23FE5600190C50 /* HHWorkspaceManager.m */; };
+		491410AC1D2402F500190C50 /* HHFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 491410AB1D2402F500190C50 /* HHFile.m */; };
+		491410AF1D2D349200190C50 /* NSTextView+HHTextGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 491410AE1D2D349200190C50 /* NSTextView+HHTextGetter.m */; };
+		491410B21D2D3D7900190C50 /* HHDocumenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 491410B11D2D3D7900190C50 /* HHDocumenter.m */; };
+		497418E71D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 497418E61D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcscheme */; };
+		497418EA1D1F909A00A1B573 /* HHJsonMapperAutocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418E91D1F909A00A1B573 /* HHJsonMapperAutocomplete.m */; };
+		497419021D1F90E500A1B573 /* VVKeyboardEventSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418F31D1F90E500A1B573 /* VVKeyboardEventSender.m */; };
+		497419031D1F90E500A1B573 /* NSString+PDRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418F61D1F90E500A1B573 /* NSString+PDRegex.m */; };
+		497419041D1F90E500A1B573 /* VVProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418F91D1F90E500A1B573 /* VVProject.m */; };
+		497419051D1F90E500A1B573 /* VVWorkspaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418FB1D1F90E500A1B573 /* VVWorkspaceManager.m */; };
+		497419061D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 497418FE1D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.m */; };
+		497419071D1F90E500A1B573 /* HHSettingPanelWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497419001D1F90E500A1B573 /* HHSettingPanelWindowController.m */; };
+		497419081D1F90E500A1B573 /* HHSettingPanelWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497419011D1F90E500A1B573 /* HHSettingPanelWindowController.xib */; };
+		4974190C1D1F962900A1B573 /* NSString+VVTextGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974190B1D1F962900A1B573 /* NSString+VVTextGetter.m */; };
+		4974190F1D1F964000A1B573 /* NSTextView+VVTextGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4974190E1D1F964000A1B573 /* NSTextView+VVTextGetter.m */; };
+		497419121D1F965200A1B573 /* NSString+VVSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 497419111D1F965200A1B573 /* NSString+VVSyntax.m */; };
+		497419151D1F967600A1B573 /* VVTextResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 497419141D1F967600A1B573 /* VVTextResult.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		491410A21D23FCC100190C50 /* HHProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHProject.h; sourceTree = "<group>"; };
+		491410A31D23FCC100190C50 /* HHProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHProject.m; sourceTree = "<group>"; };
+		491410A61D23FD4500190C50 /* XCodePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCodePrivate.h; sourceTree = "<group>"; };
+		491410A71D23FE5600190C50 /* HHWorkspaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHWorkspaceManager.h; sourceTree = "<group>"; };
+		491410A81D23FE5600190C50 /* HHWorkspaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHWorkspaceManager.m; sourceTree = "<group>"; };
+		491410AA1D2402F500190C50 /* HHFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHFile.h; sourceTree = "<group>"; };
+		491410AB1D2402F500190C50 /* HHFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHFile.m; sourceTree = "<group>"; };
+		491410AD1D2D349200190C50 /* NSTextView+HHTextGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+HHTextGetter.h"; sourceTree = "<group>"; };
+		491410AE1D2D349200190C50 /* NSTextView+HHTextGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+HHTextGetter.m"; sourceTree = "<group>"; };
+		491410B01D2D3D7900190C50 /* HHDocumenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHDocumenter.h; sourceTree = "<group>"; };
+		491410B11D2D3D7900190C50 /* HHDocumenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHDocumenter.m; sourceTree = "<group>"; };
+		497418E21D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJsonMapperAutocomplete.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		497418E61D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = HHJsonMapperAutocomplete.xcscheme; path = HHJsonMapperAutocomplete.xcodeproj/xcshareddata/xcschemes/HHJsonMapperAutocomplete.xcscheme; sourceTree = SOURCE_ROOT; };
+		497418E81D1F909A00A1B573 /* HHJsonMapperAutocomplete.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHJsonMapperAutocomplete.h; sourceTree = "<group>"; };
+		497418E91D1F909A00A1B573 /* HHJsonMapperAutocomplete.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHJsonMapperAutocomplete.m; sourceTree = "<group>"; };
+		497418EB1D1F909A00A1B573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497418F21D1F90E500A1B573 /* VVKeyboardEventSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVKeyboardEventSender.h; sourceTree = "<group>"; };
+		497418F31D1F90E500A1B573 /* VVKeyboardEventSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVKeyboardEventSender.m; sourceTree = "<group>"; };
+		497418F51D1F90E500A1B573 /* NSString+PDRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PDRegex.h"; sourceTree = "<group>"; };
+		497418F61D1F90E500A1B573 /* NSString+PDRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PDRegex.m"; sourceTree = "<group>"; };
+		497418F81D1F90E500A1B573 /* VVProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVProject.h; sourceTree = "<group>"; };
+		497418F91D1F90E500A1B573 /* VVProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVProject.m; sourceTree = "<group>"; };
+		497418FA1D1F90E500A1B573 /* VVWorkspaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVWorkspaceManager.h; sourceTree = "<group>"; };
+		497418FB1D1F90E500A1B573 /* VVWorkspaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVWorkspaceManager.m; sourceTree = "<group>"; };
+		497418FD1D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonMapperAutocompleteSetting.h; sourceTree = "<group>"; };
+		497418FE1D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJsonMapperAutocompleteSetting.m; sourceTree = "<group>"; };
+		497418FF1D1F90E500A1B573 /* HHSettingPanelWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHSettingPanelWindowController.h; sourceTree = "<group>"; };
+		497419001D1F90E500A1B573 /* HHSettingPanelWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHSettingPanelWindowController.m; sourceTree = "<group>"; };
+		497419011D1F90E500A1B573 /* HHSettingPanelWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHSettingPanelWindowController.xib; sourceTree = "<group>"; };
+		497419091D1F914C00A1B573 /* HHJsonMapperAutocomplete.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJsonMapperAutocomplete.pch; sourceTree = "<group>"; };
+		4974190A1D1F962900A1B573 /* NSString+VVTextGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VVTextGetter.h"; sourceTree = "<group>"; };
+		4974190B1D1F962900A1B573 /* NSString+VVTextGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VVTextGetter.m"; sourceTree = "<group>"; };
+		4974190D1D1F964000A1B573 /* NSTextView+VVTextGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+VVTextGetter.h"; sourceTree = "<group>"; };
+		4974190E1D1F964000A1B573 /* NSTextView+VVTextGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+VVTextGetter.m"; sourceTree = "<group>"; };
+		497419101D1F965200A1B573 /* NSString+VVSyntax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VVSyntax.h"; sourceTree = "<group>"; };
+		497419111D1F965200A1B573 /* NSString+VVSyntax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VVSyntax.m"; sourceTree = "<group>"; };
+		497419131D1F967600A1B573 /* VVTextResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVTextResult.h; sourceTree = "<group>"; };
+		497419141D1F967600A1B573 /* VVTextResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVTextResult.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		491410A51D23FD3600190C50 /* XcodePrivate */ = {
+			isa = PBXGroup;
+			children = (
+				491410A61D23FD4500190C50 /* XCodePrivate.h */,
+			);
+			path = XcodePrivate;
+			sourceTree = "<group>";
+		};
+		497418DA1D1F909A00A1B573 = {
+			isa = PBXGroup;
+			children = (
+				497418E41D1F909A00A1B573 /* HHJsonMapperAutocomplete */,
+				497418E31D1F909A00A1B573 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		497418E31D1F909A00A1B573 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				497418E21D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		497418E41D1F909A00A1B573 /* HHJsonMapperAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				491410A51D23FD3600190C50 /* XcodePrivate */,
+				497418F11D1F90E500A1B573 /* KeyboardHelper */,
+				497418F41D1F90E500A1B573 /* OCCategory */,
+				497418F71D1F90E500A1B573 /* ProjectHelper */,
+				497418FC1D1F90E500A1B573 /* Setting */,
+				497418E81D1F909A00A1B573 /* HHJsonMapperAutocomplete.h */,
+				497418E91D1F909A00A1B573 /* HHJsonMapperAutocomplete.m */,
+				491410B01D2D3D7900190C50 /* HHDocumenter.h */,
+				491410B11D2D3D7900190C50 /* HHDocumenter.m */,
+				497418EB1D1F909A00A1B573 /* Info.plist */,
+				497418E51D1F909A00A1B573 /* Supporting Files */,
+			);
+			path = HHJsonMapperAutocomplete;
+			sourceTree = "<group>";
+		};
+		497418E51D1F909A00A1B573 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				497419091D1F914C00A1B573 /* HHJsonMapperAutocomplete.pch */,
+				497418E61D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		497418F11D1F90E500A1B573 /* KeyboardHelper */ = {
+			isa = PBXGroup;
+			children = (
+				497418F21D1F90E500A1B573 /* VVKeyboardEventSender.h */,
+				497418F31D1F90E500A1B573 /* VVKeyboardEventSender.m */,
+			);
+			path = KeyboardHelper;
+			sourceTree = "<group>";
+		};
+		497418F41D1F90E500A1B573 /* OCCategory */ = {
+			isa = PBXGroup;
+			children = (
+				497419131D1F967600A1B573 /* VVTextResult.h */,
+				497419141D1F967600A1B573 /* VVTextResult.m */,
+				497418F51D1F90E500A1B573 /* NSString+PDRegex.h */,
+				497418F61D1F90E500A1B573 /* NSString+PDRegex.m */,
+				4974190A1D1F962900A1B573 /* NSString+VVTextGetter.h */,
+				4974190B1D1F962900A1B573 /* NSString+VVTextGetter.m */,
+				497419101D1F965200A1B573 /* NSString+VVSyntax.h */,
+				497419111D1F965200A1B573 /* NSString+VVSyntax.m */,
+				4974190D1D1F964000A1B573 /* NSTextView+VVTextGetter.h */,
+				4974190E1D1F964000A1B573 /* NSTextView+VVTextGetter.m */,
+				491410AD1D2D349200190C50 /* NSTextView+HHTextGetter.h */,
+				491410AE1D2D349200190C50 /* NSTextView+HHTextGetter.m */,
+			);
+			path = OCCategory;
+			sourceTree = "<group>";
+		};
+		497418F71D1F90E500A1B573 /* ProjectHelper */ = {
+			isa = PBXGroup;
+			children = (
+				497418F81D1F90E500A1B573 /* VVProject.h */,
+				497418F91D1F90E500A1B573 /* VVProject.m */,
+				491410A21D23FCC100190C50 /* HHProject.h */,
+				491410A31D23FCC100190C50 /* HHProject.m */,
+				491410AA1D2402F500190C50 /* HHFile.h */,
+				491410AB1D2402F500190C50 /* HHFile.m */,
+				497418FA1D1F90E500A1B573 /* VVWorkspaceManager.h */,
+				497418FB1D1F90E500A1B573 /* VVWorkspaceManager.m */,
+				491410A71D23FE5600190C50 /* HHWorkspaceManager.h */,
+				491410A81D23FE5600190C50 /* HHWorkspaceManager.m */,
+			);
+			path = ProjectHelper;
+			sourceTree = "<group>";
+		};
+		497418FC1D1F90E500A1B573 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				497418FD1D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.h */,
+				497418FE1D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.m */,
+				497418FF1D1F90E500A1B573 /* HHSettingPanelWindowController.h */,
+				497419001D1F90E500A1B573 /* HHSettingPanelWindowController.m */,
+				497419011D1F90E500A1B573 /* HHSettingPanelWindowController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		497418E11D1F909A00A1B573 /* HHJsonMapperAutocomplete */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497418EE1D1F909A00A1B573 /* Build configuration list for PBXNativeTarget "HHJsonMapperAutocomplete" */;
+			buildPhases = (
+				497418DF1D1F909A00A1B573 /* Sources */,
+				497418E01D1F909A00A1B573 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHJsonMapperAutocomplete;
+			productName = HHJsonMapperAutocomplete;
+			productReference = 497418E21D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		497418DB1D1F909A00A1B573 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = hirain;
+				TargetAttributes = {
+					497418E11D1F909A00A1B573 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 497418DE1D1F909A00A1B573 /* Build configuration list for PBXProject "HHJsonMapperAutocomplete" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 497418DA1D1F909A00A1B573;
+			productRefGroup = 497418E31D1F909A00A1B573 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				497418E11D1F909A00A1B573 /* HHJsonMapperAutocomplete */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		497418E01D1F909A00A1B573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497418E71D1F909A00A1B573 /* HHJsonMapperAutocomplete.xcscheme in Resources */,
+				497419081D1F90E500A1B573 /* HHSettingPanelWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		497418DF1D1F909A00A1B573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497419021D1F90E500A1B573 /* VVKeyboardEventSender.m in Sources */,
+				491410A41D23FCC100190C50 /* HHProject.m in Sources */,
+				4974190C1D1F962900A1B573 /* NSString+VVTextGetter.m in Sources */,
+				491410A91D23FE5600190C50 /* HHWorkspaceManager.m in Sources */,
+				4974190F1D1F964000A1B573 /* NSTextView+VVTextGetter.m in Sources */,
+				491410AF1D2D349200190C50 /* NSTextView+HHTextGetter.m in Sources */,
+				497419061D1F90E500A1B573 /* HHJsonMapperAutocompleteSetting.m in Sources */,
+				497419041D1F90E500A1B573 /* VVProject.m in Sources */,
+				497418EA1D1F909A00A1B573 /* HHJsonMapperAutocomplete.m in Sources */,
+				497419051D1F90E500A1B573 /* VVWorkspaceManager.m in Sources */,
+				497419071D1F90E500A1B573 /* HHSettingPanelWindowController.m in Sources */,
+				497419151D1F967600A1B573 /* VVTextResult.m in Sources */,
+				491410AC1D2402F500190C50 /* HHFile.m in Sources */,
+				497419121D1F965200A1B573 /* NSString+VVSyntax.m in Sources */,
+				497419031D1F90E500A1B573 /* NSString+PDRegex.m in Sources */,
+				491410B21D2D3D7900190C50 /* HHDocumenter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		497418EC1D1F909A00A1B573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		497418ED1D1F909A00A1B573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		497418EF1D1F909A00A1B573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HHJsonMapperAutocomplete/HHJsonMapperAutocomplete.pch";
+				INFOPLIST_FILE = HHJsonMapperAutocomplete/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirain.HHJsonMapperAutocomplete;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		497418F01D1F909A00A1B573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HHJsonMapperAutocomplete/HHJsonMapperAutocomplete.pch";
+				INFOPLIST_FILE = HHJsonMapperAutocomplete/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirain.HHJsonMapperAutocomplete;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		497418DE1D1F909A00A1B573 /* Build configuration list for PBXProject "HHJsonMapperAutocomplete" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497418EC1D1F909A00A1B573 /* Debug */,
+				497418ED1D1F909A00A1B573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497418EE1D1F909A00A1B573 /* Build configuration list for PBXNativeTarget "HHJsonMapperAutocomplete" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497418EF1D1F909A00A1B573 /* Debug */,
+				497418F01D1F909A00A1B573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 497418DB1D1F909A00A1B573 /* Project object */;
+}

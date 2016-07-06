@@ -1,0 +1,28 @@
+//
+//  HHJsonMapperAutocomplete.pch
+//  HHJsonMapperAutocomplete
+//
+//  Created by Herui on 6/5/16.
+//  Copyright © 2016 hirain. All rights reserved.
+//
+
+#ifndef HHJsonMapperAutocomplete_pch
+#define HHJsonMapperAutocomplete_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#import "NSString+PDRegex.h"
+#endif
+
+//#define __DEBUG__ 1
+#ifdef __DEBUG__
+#define VVLog(...) NSLog(__VA_ARGS__)
+#else
+#define VVLog(...) do{} while(0)
+#endif
+
+#endif /* HHJsonMapperAutocomplete_pch */
