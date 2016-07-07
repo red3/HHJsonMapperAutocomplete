@@ -27,7 +27,11 @@
     HHJsonMapperAutocompleteSetting *defaultSetting = [HHJsonMapperAutocompleteSetting defaultSetting];
     [self.tfTrigger setStringValue:[defaultSetting triggerString]];
     [self.tfMapperMethod setStringValue:[defaultSetting mapperMethodString]];
-    [self.popUpButton selectItemAtIndex:1];
+    [self.popUpButton selectItemAtIndex:[defaultSetting jsonModelOption]];
+    
+    self.tfMapperMethod.enabled = [defaultSetting jsonModelOption] ==  HHJSinceOptionCustom ? YES : NO;
+
+
     
 }
 
@@ -50,16 +54,44 @@
             [self.tfTrigger setStringValue:HHJDefaultTriggerString];
         }
     }
+   
     return YES;
 }
 
 #pragma mark - Event
 - (IBAction)pupUpButtonUpdate:(NSPopUpButton *)sender {
     NSUInteger selectedIndex = sender.indexOfSelectedItem;
-    NSLog(@"index : %@", @(selectedIndex));
+    [[HHJsonMapperAutocompleteSetting defaultSetting] setJsonModelOption:selectedIndex];
+    
+    NSString *mapperMethod = [[HHJsonMapperAutocompleteSetting defaultSetting] recommendableMapperMethodStringWithJsonModelOption:selectedIndex];
+    [[HHJsonMapperAutocompleteSetting defaultSetting] setMapperMethodString:mapperMethod];
+    
+    [self.tfMapperMethod setStringValue:mapperMethod];
+    self.tfMapperMethod.enabled = selectedIndex ==  HHJSinceOptionCustom ? YES : NO;
+    
+    if (selectedIndex == HHJSinceOptionCustom) {
+        [self.tfMapperMethod becomeFirstResponder];
+        
+        NSRange r = [mapperMethod rangeOfString:@"+ (NSDictionary *)"];
+        if (r.location != NSNotFound) {
+            [self.tfMapperMethod selectText:self];
+            [[self.tfMapperMethod currentEditor] setSelectedRange:NSMakeRange(r.location+r.length, mapperMethod.length-r.length)];
+        }
+    }
+
     
 }
 - (IBAction)resetButtonClicked:(NSButton *)button {
+    
+    HHJsonMapperAutocompleteSetting *defaultSetting = [HHJsonMapperAutocompleteSetting defaultSetting];
+    defaultSetting.triggerString = HHJDefaultTriggerString;
+    defaultSetting.jsonModelOption = HHJDefaultJsonModelOption;
+    defaultSetting.mapperMethodString = HHJDefaultMapperMethodString;
+    
+    [self.tfTrigger setStringValue:[defaultSetting triggerString]];
+    [self.tfMapperMethod setStringValue:[defaultSetting mapperMethodString]];
+    [self.popUpButton selectItemAtIndex:[defaultSetting jsonModelOption]];
+    self.tfMapperMethod.enabled = NO;
 }
 
 @end

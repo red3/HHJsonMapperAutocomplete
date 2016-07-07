@@ -140,12 +140,8 @@ static HHJsonMapperAutocomplete *sharedPlugin;
         // __block BOOL shouldReplace = NO;
         
         NSString *filePath = [HHWorkspaceManager currentEditingFilePath];
-        NSLog(@"file path : %@", filePath);
-        
         NSDictionary *properties = [HHProject propertyListWithPath:filePath];
-        NSLog(@"array : %@", properties);
         NSArray *implementations = [textView hh_implementationsOfPreviousLines];
-        NSLog(@"imp : %@", implementations);
         
         NSString *implementation = [implementations lastObject];
         NSArray *propertiesArray = [properties objectForKey:implementation];
@@ -153,7 +149,7 @@ static HHJsonMapperAutocomplete *sharedPlugin;
             return;
         }
         
-        HHDocumenter *documenter = [[HHDocumenter alloc] initWithProperties:propertiesArray];
+        HHDocumenter *documenter = [[HHDocumenter alloc] initWithProperties:propertiesArray code:[[HHJsonMapperAutocompleteSetting defaultSetting] mapperMethodString]];
         
         
         NSString *documentationString = documenter.jsonKeyPaths;
@@ -200,7 +196,7 @@ static HHJsonMapperAutocomplete *sharedPlugin;
                 int baseIndentationLength = 0;
                 [textView setSelectedRange:NSMakeRange(currentLineResult.range.location + baseIndentationLength, 0)];
                 
-                //Send a 'tab' after insert the doc. For our lazy programmers. :)
+                // Send a 'tab' after insert the doc. For our lazy programmers. :)
                 // [kes sendKeyCode:kVK_Tab];
                 [kes endKeyBoradEvents];
                 

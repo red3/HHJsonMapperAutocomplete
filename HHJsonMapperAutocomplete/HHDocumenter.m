@@ -11,24 +11,28 @@
 @interface HHDocumenter ()
 
 @property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, copy) NSString *code;
 
 
 @end
 
 @implementation HHDocumenter
 
-- (instancetype)initWithProperties:(NSArray <NSString *> *)properties {
+- (instancetype)initWithProperties:(NSArray <NSString *> *)properties code:(NSString *)code {
     self = [super init];
     if (!self) {
         return nil;
     }
     _properties = properties;
+    _code = code;
     return self;
 }
 
 - (NSString *)jsonKeyPaths {
     
-    NSMutableString *str = [@"+ (NSDictionary *)JSONKeyPathsByPropertyKey {\n    return @{\n" mutableCopy];
+    NSString *code = [NSString stringWithFormat:@"%@ {\n    return @{\n", self.code];
+    NSMutableString *str = [code mutableCopy];
+
     
     NSArray *array = self.properties;
     

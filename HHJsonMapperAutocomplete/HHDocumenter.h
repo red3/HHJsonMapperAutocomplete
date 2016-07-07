@@ -10,7 +10,7 @@
 
 @interface HHDocumenter : NSObject
 
-- (instancetype)initWithProperties:(NSArray <NSString *> *)properties;
+- (instancetype)initWithProperties:(NSArray <NSString *> *)properties code:(NSString *)code;
 
 @property (nonatomic, copy) NSString *jsonKeyPaths;
 

@@ -16,8 +16,9 @@ typedef NS_ENUM(NSInteger, HHJJsonModelOption) {
 };
 
 extern NSString *const HHJDefaultTriggerString;
-extern NSString *const HHJDefaultAuthorString;
-extern NSString *const HHJDefaultDateInfomationFormat;
+extern NSString *const HHJDefaultMapperMethodString;
+extern NSInteger HHJDefaultJsonModelOption;
+
 
 @interface HHJsonMapperAutocompleteSetting : NSObject
 
@@ -28,6 +29,8 @@ extern NSString *const HHJDefaultDateInfomationFormat;
 @property NSString *triggerString;
 @property NSString *mapperMethodString;
 @property HHJJsonModelOption jsonModelOption;
+
+- (NSString *)recommendableMapperMethodStringWithJsonModelOption:(HHJJsonModelOption)option;
 
 
 

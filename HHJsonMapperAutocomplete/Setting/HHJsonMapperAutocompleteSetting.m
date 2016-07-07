@@ -10,22 +10,15 @@
 #import <Carbon/Carbon.h>
 
 NSString *const HHJDefaultTriggerString = @"???";
-NSString *const HHJDefaultAuthorString = @"";
 NSString *const HHJDefaultMapperMethodString = @"+ (NSDictionary*)modelCustomPropertyMapper";
+NSInteger HHJDefaultJsonModelOption = 0;
 
 NSString *const kHHJTriggerString = @"com.hirain.HHJsonMapperAutocomplete.triggerString";
 NSString *const kHHJMapperMethodString = @"com.hirain.HHJsonMapperAutocomplete.mapperMethodString";
 NSString *const kHHJJsonModelOption = @"com.hirain.HHJsonMapperAutocomplete.jsonModelOption";
 
 
-NSString *const kVVDUseSpaces = @"com.onevcat.VVDocumenter.useSpaces";
-NSString *const kVVDPrefixWithStar = @"com.onevcat.VVDocumenter.prefixWithStar";
-
 @implementation HHJsonMapperAutocompleteSetting
-
-
-
-
 
 -(NSInteger) keyVCode
 {
@@ -64,9 +57,6 @@ NSString *const kVVDPrefixWithStar = @"com.onevcat.VVDocumenter.prefixWithStar";
     dispatch_once(&once, ^ {
         defaultSetting = [[HHJsonMapperAutocompleteSetting alloc] init];
         
-        NSDictionary *defaults = @{kVVDPrefixWithStar: @YES,
-                                   kVVDUseSpaces: @YES};
-        [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     });
     return defaultSetting;
     
@@ -113,6 +103,27 @@ NSString *const kVVDPrefixWithStar = @"com.onevcat.VVDocumenter.prefixWithStar";
 - (void)setJsonModelOption:(HHJJsonModelOption)jsonModelOption {
     [[NSUserDefaults standardUserDefaults] setInteger:jsonModelOption forKey:kHHJJsonModelOption];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)recommendableMapperMethodStringWithJsonModelOption:(HHJJsonModelOption)option {
+    switch (option) {
+        case HHJJsonModelOptionYYModel: {
+            return HHJDefaultMapperMethodString;
+            break;
+        }
+        case HHJJsonModelOptionMantle: {
+            return @"+ (NSDictionary *)JSONKeyPathsByPropertyKey";
+            break;
+        }
+        case HHJJsonModelOptionJsonModel: {
+            return @"+ (JSONKeyMapper*)keyMapper";
+            break;
+        }
+        case HHJSinceOptionCustom: {
+            return @"+ (NSDictionary *)customMethod";
+            break;
+        }
+    }
 }
 
 
