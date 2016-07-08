@@ -66,6 +66,25 @@
     return retVal;
 }
 
+- (NSArray *)hh_stringsByExtractingGroupsUsingRegexPattern:(NSString *)regex {
+    
+    NSUInteger options=0;
+    
+    NSError *error=nil;
+    NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:regex options:options error:&error];
+    if (error) {
+        NSLog(@"Error creating Regex: %@",[error description]);
+        return nil;
+    }
+    
+    __block NSMutableArray *retVal = [NSMutableArray array];
+    [pattern enumerateMatchesInString:self options:0 range:NSMakeRange(0, [self length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        NSString *matchedString=[self substringWithRange:result.range];
+        [retVal addObject:matchedString];
+    }];
+    return retVal;
+}
+
 -(NSArray *) vv_stringsByExtractingGroupsUsingRegexPattern:(NSString *)regex {
     return [self vv_stringsByExtractingGroupsUsingRegexPattern:regex caseInsensitive:NO treatAsOneLine:NO];
 }

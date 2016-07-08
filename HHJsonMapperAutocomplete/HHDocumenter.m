@@ -67,7 +67,7 @@
         [str appendString:value];
     }
     
-    [str appendString:[NSString stringWithFormat:@"\n    };\n}"]];
+    [str appendString:[NSString stringWithFormat:@"    };\n}"]];
     
     return str;
     

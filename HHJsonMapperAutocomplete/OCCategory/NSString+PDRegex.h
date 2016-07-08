@@ -18,4 +18,8 @@
 -(BOOL) vv_matchesPatternRegexPattern:(NSString *)regex;
 -(BOOL) vv_matchesPatternRegexPattern:(NSString *)regex caseInsensitive:(BOOL) ignoreCase treatAsOneLine:(BOOL) assumeMultiLine;
 
+// will return whole string that matched the regex
+- (NSArray *)hh_stringsByExtractingGroupsUsingRegexPattern:(NSString *)regex;
+
+
 @end

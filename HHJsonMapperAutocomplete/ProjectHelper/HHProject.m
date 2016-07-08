@@ -9,6 +9,7 @@
 #import "HHProject.h"
 #import "HHWorkspaceManager.h"
 #import "HHFile.h"
+#import "NSString+PDRegex.h"
 
 @implementation HHProject
 
@@ -16,15 +17,10 @@
     
     // file content
     NSString *content = [self getFileContent];;
-    
-    //包含光标的头文件名称
     NSArray *interfaces = getIntefaceNameByContent(content);
-    
-    //获得所有propertes
+    // all propertes
     NSDictionary *properties = getPropertiesByInterfaceName(interfaces, content);
-    
     return properties;
-    
 }
 
 + (NSArray *)fileReferences {
@@ -74,7 +70,6 @@
     if (doc) {
         DVTFilePath *filePath = doc.filePath;
         NSString *fileName = filePath.fileURL.lastPathComponent;
-        NSLog(@"filenamemmememe : %@", fileName);
         fileName = [self fileNameByStrippingExtensionAndLastOccuranceOfTest:fileName];
         
         HHFile *headerRef = nil;
@@ -89,8 +84,6 @@
                     
                     NSString *path = reference.absolutePath;
                     NSString *string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-                    
-                    
                     return string;
                 }
             }
@@ -125,50 +118,51 @@
 
 NSArray *getIntefaceNameByContent(NSString *content) {
     
-    NSString *regex = @"(@interface\\s*\\S*)";
-    
-    NSError *error=nil;
-    NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:&error];
-    
-    NSArray *res = [pattern matchesInString:content options:0 range:NSMakeRange(0, content.length)];
+    NSArray *res = [content hh_stringsByExtractingGroupsUsingRegexPattern:@"(@interface\\s*\\S*)"];
     
     NSMutableArray *results = @[].mutableCopy;
-    for (NSTextCheckingResult *result in res) {
-        NSString *test = [content substringWithRange:result.range];
-        
-        test = [[test componentsSeparatedByString:@" "] lastObject];
-        [results addObject:test];
+    for (NSString *test in res) {
+        NSString *bullet = [[test componentsSeparatedByString:@" "] lastObject];
+        [results addObject:bullet];
     }
     
     return [results copy];
-    
 }
 
 NSDictionary *getPropertiesByInterfaceName(NSArray *interfaces, NSString *content) {
     
     NSMutableDictionary *propertyDics = @{}.mutableCopy;
     
-    for (NSString *interfaceName in interfaces) {
+    for (int i=0; i<interfaces.count; i++) {
         
-        NSString *regex = [NSString stringWithFormat:@"@interface\\s+%@(?s)(.*)@end",interfaceName];
+        NSString *interfaceName = interfaces[i];
+        NSString *regex;
+        // @interface\s+JsonModelA([\s\S]*)?JsonModelB
+        if (i+1 < interfaces.count) {
+            NSString *nextInterfaceName = interfaces[i+1];
+            regex = [NSString stringWithFormat:@"@interface\\s+%@([\\s\\S]*)?%@", interfaceName, nextInterfaceName];
+        } else {
+            regex = [NSString stringWithFormat:@"@interface\\s+%@([\\s\\S]*)?@end", interfaceName];
+        }
         
-        NSError *error = nil;
-        NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:&error];
-        NSArray *res = [pattern matchesInString:content options:0 range:NSMakeRange(0, content.length)];
+        NSArray *interfaceContents = [content hh_stringsByExtractingGroupsUsingRegexPattern:regex];
+        if (!interfaceContents) {
+            return nil;
+        }
+       
+        NSString *interfaceContent = interfaceContents[0];
         
-        for (NSTextCheckingResult *result in res) {
-            NSString *test = [content substringWithRange:result.range];
-            
-            //匹配property
-            NSArray *properties = getRegexResult(@"@property.*?;", test);
+        regex = [NSString stringWithFormat:@"@interface\\s+%@(?s)(.*)@end", interfaceName];
+        
+        
+        NSArray *res = [interfaceContent hh_stringsByExtractingGroupsUsingRegexPattern:regex];
+        for (NSString *test in res) {
+            // 匹配property
+            NSArray *properties = [test hh_stringsByExtractingGroupsUsingRegexPattern:@"@property.*?;"];
             
             NSMutableArray *array = [NSMutableArray array];
             
-            for (NSTextCheckingResult *subResult in properties) {
-                
-                
-                NSString *subString = [test substringWithRange:subResult.range];
-                
+            for (NSString *subString in properties) {
                 NSRange lastStarRange = [subString rangeOfString:@"*" options:NSBackwardsSearch];
                 NSRange lastSpaceRange = [subString rangeOfString:@" " options:NSBackwardsSearch];
                 
@@ -194,15 +188,6 @@ NSDictionary *getPropertiesByInterfaceName(NSArray *interfaces, NSString *conten
     }
     return [propertyDics copy];
 
-}
-
-NSArray *getRegexResult(NSString *regex,NSString *content) {
-    
-    NSError *error = nil;
-    NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:&error];
-    NSArray *res = [pattern matchesInString:content options:0 range:NSMakeRange(0, content.length)];
-    
-    return res;
 }
 
 
