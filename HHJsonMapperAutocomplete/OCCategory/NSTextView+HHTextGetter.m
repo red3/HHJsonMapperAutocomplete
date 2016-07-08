@@ -15,7 +15,7 @@
     return [[[self selectedRanges] objectAtIndex:0] rangeValue].location;
 }
 
--(NSArray <NSString *> *)hh_implementationsOfPreviousLines {
+- (NSArray <NSString *> *)hh_implementationsOfPreviousLines {
     
     NSRange range = [[[self selectedRanges] objectAtIndex:0] rangeValue];
     NSString *text = [self.textStorage.string substringWithRange:NSMakeRange(0, range.location)];
